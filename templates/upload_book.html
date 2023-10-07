@@ -1,0 +1,20 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block css %}
+   <link rel="stylesheet" href="{% static 'upload.css' %}"/>
+{% endblock %}
+{% block content %} 
+      <form method="post" enctype="multipart/form-data">
+         {% csrf_token %}
+         {{upload_form.as_p}} 
+         <input type="submit" value="upload" />
+         <p>{{upload_form.errors}}</p>
+       </form>
+     {% if b_exist %}
+       <div>
+            <img src="{{b_exist.book.cover.url}}" width="150px"/>
+    
+      </div>
+      <p>This book is already uploaded!</p>
+    {% endif %} 
+{% endblock %}

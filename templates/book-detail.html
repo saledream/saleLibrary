@@ -1,0 +1,80 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block css %} 
+<link rel="stylesheet" href="{% static 'book-detail.css' %}"/>
+{% endblock %} 
+{% block js %} 
+    <script src="{% static 'download.js' %}">
+
+    </script>
+{% endblock %} 
+
+{% block content %}
+   <section class="main-grid">
+      <div class="book-detail">
+            <div class="book-container">
+                    <h1>{{book.title}}</h1>
+                <div>
+                        <div class="book-cover">
+                                <div>
+                                    <img src="{{book.cover.url}}" width="100%"/>
+                               
+                                </div>
+                                <a href="{% url 'bookstore:download' book.slug %}">                                <input type="button" value="Download"
+                                onclick="download_file('{{book.slug}}');"
+                                class="download-btn"/>
+                                </a>
+                        </div> 
+                        <div class="metadata">
+                             
+                            <p> <span>Title:</span> {{book.title}}</p>   
+                
+                            <p> <span>Author:</span> {{book.author}}</p>  
+                            <p> <span>Pages:</span> {{book.pages}}</p>  
+                            <p> <span>Size:</span> {{book.size}}</p>  
+                            <p> <span>Language:</span> {{book.language}}</p> 
+                            <p> <span>Published_year:</span> {{book.published_year}}</p> 
+                            <p> <span>File Type:</span> {{book.file_type}}</p> 
+                        </div>
+                    </div>
+            </div>
+           <div class="description">
+                 {% if book.description != '' %}
+                 <h3> book description</h3> 
+                      <p>{{book.description}}</p>
+                 {% endif %}
+                 
+           </div>
+           <h4> Uploaded By: 
+            <a href="/accounts/show-MyProfile?q={{book.upload_by.username}}">{{book.upload_by.username}}</a></h3>
+
+      </div>
+      
+      <div class="mobile-links">
+        <hr>
+       
+       {% if request.user == book.upload_by %} 
+         <a href="{% url 'bookstore:edit-book' book.id %}">Edit this book</a>
+         {% endif %}
+     </div>
+      
+      <aside>
+            <div class="books-category">
+                <p>Books category</p>
+                 {% for cate in category %} 
+                   <a href="/books/show?q={{cate}}">{{cate}}</a>
+                 {% endfor %}
+      
+            </div> 
+            <div class="links">
+                
+                {% if request.user == book.upload_by %} 
+                <a href="{% url 'bookstore:edit-book' book.id %}">Edit this book</a>
+                {% endif %}
+            </div> 
+           
+                
+         </aside>
+   </section>
+   
+{% endblock %}

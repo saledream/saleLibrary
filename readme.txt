@@ -1,0 +1,1 @@
+this is simple library project with Django web framework.

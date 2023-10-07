@@ -1,0 +1,42 @@
+{% extends 'base.html' %} 
+{% load static %} 
+
+{% block css %} 
+      <link rel="stylesheet" href="{% static 'editmyprofile.css' %}"/>
+{% endblock %}
+
+{% block js %} 
+   <script src="{% static 'editmyprofile.js' %}">
+    
+   </script>
+{% endblock %}
+{% block content %}
+      <form method="post" enctype="multipart/form-data"> 
+           {% csrf_token %}
+            <section class="user-profile">
+                <div class="profilePhoto">
+                    <div class="photo">
+                        <img src="{{user.profile.profile_photo.url}}"/>
+                    </div>
+                    {% for field in profile %} 
+                    <div class="field-label">
+                        <p class="input">{{field}}</p>
+                        <p class="label">{{field.label}}</p>
+                    </div>
+                {% endfor %}
+                </div>
+                <div class="user">
+                    {% for field in userform %} 
+                    <div class="field-label">
+                        <p class="input">{{field}}</p>
+                        <p class="label">{{field.label}}</p>
+        
+                    </div>
+                    {% endfor %}
+                
+                </div>
+        
+        </section>
+        <input type="submit" value="save" />
+   </form>
+{% endblock %}  

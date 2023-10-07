@@ -1,0 +1,107 @@
+.user-profile {
+    margin-top:50px;
+}
+.user-profile,.profilePhoto,.user {
+
+    width:70%;
+    margin-right:auto;
+    margin-left: auto;
+}
+.input input,.input select {
+    border:none;
+    font-size: 16px;
+    padding: 5px 0;
+    font-weight: bold;
+    color: #343a40;
+}
+.field-label {
+    border-bottom: 1px solid gray;
+    padding:5px;
+}
+.label {
+    font-size:11px;
+    color:#343a40;
+    font-style: italic;
+}
+.books-grid {
+    display: grid; 
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: auto;
+    grid-gap: 10px;;
+
+}
+.photo img {
+    width: 100%;
+}
+input[type="submit"] {
+    display: inline-block;
+    margin-right:auto;
+    margin-left: auto;
+    padding: 10px 20px;
+    margin:10px;
+    font-size:16px;
+    background-color: #343a40;
+    color: white;
+    border:none;
+    border-radius: 10%;
+    position: relative;
+    left: 30%;
+}
+input[type="submit"]:hover {
+    background-color: green;
+} 
+@media only screen and 
+    (max-width:480px) {
+        .books-grid {
+            display: grid; 
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: auto;
+            grid-gap: 10px;;
+        
+        }       
+    }
+
+.books  {
+    width:100%;
+}
+@media only screen and 
+    (max-width:676px) {
+        .books-grid {
+            display: grid; 
+            grid-template-columns: repeat(5,1fr);
+            grid-template-rows: auto;
+            grid-gap: 10px;;
+        
+        }       
+    }
+
+@media only screen and 
+    (max-width:1280px) {
+        .books-grid {
+            display: grid; 
+            grid-template-columns: repeat(10,1fr);
+            grid-template-rows: auto;
+            grid-gap: 10px;;
+        
+        }       
+}
+.input input:focus {
+    outline:none;
+    border-bottom: 1px solid blue;
+}
+
+input[type="file"] + label {
+
+        font-family: sans-serif;
+        background-color: #f44336;
+        padding:10px 30px;
+        border:2px solid #f44336;
+        border-radius: 3px;
+        color:#fff;
+        cursor: pointer;
+        transition: all 0.2s;
+}
+input[type='file']+ label:hover {
+    background-color: #fff;
+    color:#f44336;
+}

@@ -1,0 +1,42 @@
+{% extends 'base.html' %} 
+{% load static %}  
+ 
+{% block css %} 
+  <link rel="stylesheet" href="{% static 'login.css' %}"/> 
+{% endblock %}
+
+{% block js %} 
+
+{% endblock %} 
+
+{% block content %} 
+     <div class="login-container">
+        <div class="login-logo-container">
+            <img src="{% static 'images/logo.png' %}"/>
+        </div>
+        <form method="post">
+            <div class="field">
+                <h1> Login </h1>
+            </div>
+            
+            {% csrf_token %}
+             {% for field in form %} 
+               <div class="field">
+                    <p>{{field.label}}</p> 
+                    <p>{{field}}</p>
+               </div>
+             {% endfor %}
+             <p class="forgot"> <a href="">Forgot your password?</a></p>
+            <div class="btns">
+                <input type="submit" value="login" /> 
+                <a href="{% url 'account:signup' %}"> sign up</a>
+            </div>
+            
+            <div class="error_board">
+                <p>{{error_msg}}</p>
+            </div>
+            <input type="hidden" name="next" value="{{request.GET.next}}"/>
+        </form>
+        
+     </div>
+{% endblock %}

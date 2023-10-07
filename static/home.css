@@ -1,0 +1,139 @@
+html {
+    background:#bfced3;
+}
+main {
+    background:#d0e7ee;
+}
+.space {
+    padding:50px;
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: 1fr;
+    height:200px;
+    background:#d0e7ee;
+    margin-bottom: 30px;
+
+}
+
+.bg-color {
+    background: #343a40;
+    color:white;
+}
+.logo-background {
+    height:400px;
+    background-image: url("../static/images/logo.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+   
+
+}
+@media only screen and 
+(max-width:1280px) {
+    .bg-color {
+        border-top-right-radius: 10px;
+    }
+}
+h4 {
+    text-align: center;
+}
+.section-container {
+   background-color:#d0e7ee;
+}
+.search {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    width:100%;
+}
+.search input[type="search"] {
+
+    flex-grow: 1;
+    padding: 8px;
+    color:#343a40;
+
+}
+.search input[type="search"]:focus {
+    outline:none;
+    border-bottom: 1px solid blue;
+}
+.search input[type="button"] {
+    background-color: #343a40;
+    color: white;
+    border:none;
+    padding:0 5px;
+    position: relative;
+    left:-3px;
+    cursor: pointer;
+}
+@media only screen and 
+(max-width:480px){
+
+    .grid-books {
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+    }
+    .section-container {
+        width:90%;
+        margin-right:auto;
+        margin-left:auto;
+    }
+}
+@media only screen and 
+(max-width:1280px) {
+    
+    .grid-books {
+        display:grid;
+        grid-template-columns: repeat(5,1fr);
+        grid-gap: 10px;
+    }
+    .section-container {
+        width:70%;
+        margin-right:auto;
+        margin-left:auto;
+    }
+}
+.book-container {
+    border-bottom:1px solid gray;
+    padding: 5px 0;
+    margin:5px 2px;
+    display: flex;
+    flex-direction: row;
+}
+.book-container p span {
+
+    color: darkslategrey;
+    padding: 3px;
+
+}
+.book-container p {
+    color:#343a40;
+}
+
+.book-cover {
+    width:30%;
+}
+.metadata {
+    width:70%;
+    margin-left:5px;
+    padding-top: 10px;
+}
+
+.book-cover img {
+    width:100%;
+}
+@media only screen and 
+(max-width: 480px) {
+    .book-container {
+        display:flex;
+        flex-direction: column;
+    }
+    .book-cover {
+        width:100%;
+    }
+    .metadata {
+        width:100%;
+        margin-left:5px;
+        padding-top: 10px;
+    }
+}

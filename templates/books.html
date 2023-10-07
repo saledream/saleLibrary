@@ -1,0 +1,72 @@
+{% extends 'base.html' %} 
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'books.css' %}"/>
+{% endblock %} 
+
+{% block js %}
+     <script src="{% static 'highlightcategory.js' %}">
+
+     </script>
+{% endblock %}
+{% block content %}
+<div class="white-title-container">
+   
+</div>
+<section class="main-grid">
+   <section class="books">
+        <h1>{{bc}}</h1>
+          <hr class="header-line"/>
+          <div class="books-grid">
+            {% for book in books %} 
+               <div class="book-container">
+                        <div class="book-cover">
+                          <a href="{% url 'bookstore:book-detail' book.slug %}">
+                              <img src="{{book.cover.url}}" width="100%" alt="{{book.title}}"/>
+                            
+
+                              </a>
+                        </div>
+                        <div class="book-metadata">
+                     
+                                <p><span>Title</span>:
+                                  {{book.title}} </p> 
+                              <p><span>Author</span>:
+                                  {{book.author}} </p> 
+                              
+                              <p><span>pages</span>:  
+                                 {{book.pages}}
+                              </p>
+                           
+                              <p><span>size</span>: 
+                                 {{book.size}}
+                              </p>
+                         
+                            
+                        </div>
+                              
+               </div>
+               <hr class="bottom-line">
+               {% empty %} 
+                  <h1> No Books</h1>
+               {% endfor %}
+            </div>
+          
+   </section>
+   <aside>
+      <div class="books-category">
+          <p>Books category</p>
+          {% for cate in category %} 
+ 
+          <a href="/books/show?q={{cate}}" onclick="highlight(this);"> {{cate}}</a>
+
+          {% endfor %}
+
+
+      </div>  
+     
+          
+   </aside>
+</section>
+
+{% endblock %}

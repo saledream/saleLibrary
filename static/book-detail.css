@@ -1,0 +1,150 @@
+.book-container > div {
+    display: flex;
+}
+.book-container {
+    margin-top:20px;
+}
+.book-cover {
+    position: relative;
+}
+.book-cover > div {
+       overflow: hidden;
+}
+.download-btn {
+    position: absolute;
+    bottom:5px;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+    background-color: green;
+    color: white;
+    border:none;
+    cursor: pointer;
+    opacity:0.9;
+}
+.download-btn:hover {
+    opacity:1;
+}
+.metadata p {
+    text-transform: capitalize;
+}
+.book-detail h1, .book-detail h3,h4 {
+    color: darkslategray;
+    padding: 10px 0;
+}
+.book-detail h3 {
+    border-bottom: 1px solid darkslategrey;
+}
+
+.download-btn {
+    display: block;
+ }
+ 
+
+@media only screen  and 
+(max-width: 480px) {
+     .book-detail {
+        width: 80%;
+        margin-left: auto;
+        margin-right:auto;
+     }
+     .book-container > div {
+        display: block; 
+     }
+     
+   aside {
+    display:none;
+   }
+   .mobile-links {
+    display: block;
+    margin:10px;
+    width: 100%
+
+   }
+   .mobile-links a {
+    display: inline-block;
+    padding: 5px;
+    color:green;
+    border-radius: 10px;
+    text-decoration: none;
+    margin:10px;
+    outline:1px solid green;
+
+   }
+}
+.metadata p span {
+    color: blue;
+    margin:3px 0;
+    padding: 2px;
+
+}
+@media only screen and 
+(min-width:500px) and (max-width:1280px) {
+    .main-grid {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        grid-gap: 5px; 
+
+    }
+    .book-container > div {
+        display: flex;
+
+    }
+    .mobile-links {
+        display:none;
+     }
+    .book-detail {
+        width: 80%;
+        margin-left: auto;
+        margin-right:auto;
+     }
+     .book-cover, .metadata {
+        width: 50%;
+        margin-right: 10px;
+     }
+     .metadata {
+        display: flex;
+        flex-direction: column;
+        padding-top: 20px;
+        position: relative;
+     }
+
+}
+.description p {
+    padding:5px 10px;
+    font-size:13px;
+    text-align:start;
+
+}
+aside {
+    color: white;
+    padding: 10px;
+    
+}
+.books-category {
+    background-color: #343a40;
+    
+}
+.books-category  a {
+    display:block;
+    padding: 5px;
+    margin:2px;
+    color:white;
+    text-decoration: none;
+    margin-left:5px;
+    font-size:14px;
+    
+}
+.books-category p {
+    background: white;
+    color: black;
+    font-weight: bold;
+    font-style: italic;
+    padding:1px 2px
+}
+.books-category  a:hover {
+    background-color: white;
+    color: darkslategray;
+   
+}

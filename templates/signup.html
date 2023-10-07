@@ -1,0 +1,51 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block css %} 
+    <link rel="stylesheet" href="{% static 'singup.css' %}"/>
+{% endblock %}
+{% block content %} 
+    <section class="create-account-form">
+          
+          <div class="logo">
+                
+                <div class="img-div">
+                    <img src="{% static 'images/logo.png' %}"/>
+                </div>
+             {% if new_user %} 
+
+             {% else %}
+              <div class="h1-div">
+                   <h1> Create</h1>
+                   <h1> Your Account</h1>
+              </div>
+            {% endif %} 
+          </div>
+        {% if new_user %} 
+        <div>
+          <h1 style="color:#343a40;width:70%;">  <span style="color:green"> {{new_user.username}} </span> you create your account successfully</h1>
+          <p style="color:#343a40;width:70%;"> Now you can <a href="{% url 'account:login' %}">log in</a> to your account</p>
+        </div>
+        {% else %}
+      
+        <form action="." method="post">
+            {% csrf_token %}
+
+            {% for field in form %} 
+                <p class="label">{{field.label}}</p>
+                <div class="field">
+                    <p class="input">{{field}}</p>
+                    <p class="errors">{{field.errors}}</p>
+                </div>
+                
+            {% endfor %}
+            <div class="btns">
+                <input type="submit" value ="create account" />
+                <a href="{% url 'account:login' %}">
+                  Already have account?
+                </a>
+            </div>
+        </form>
+        {% endif %} 
+    </section>
+
+{% endblock %}

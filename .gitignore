@@ -1,0 +1,13 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.env
+venv
+db.sqlite3
+node_modules
+media
+staticfiles
+.idea
+*~
+\#*\#
+.\#*

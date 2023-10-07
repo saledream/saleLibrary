@@ -1,0 +1,100 @@
+form span {
+    display: none;
+}
+.field {
+    display: flex;
+    flex-direction: row;
+
+}
+form {
+    width: 80%;
+    margin:10px;
+    margin-left: auto;
+    margin-right: auto; 
+    color:blue;
+    padding: 10px;
+    box-shadow: 1px 1px 5px 1px gray; 
+
+}
+
+section h1 {
+    text-align: center;
+    color: #343a40;
+    padding:5px;
+}
+form input:not(input[type='submit']) {
+    width:100%;
+}
+
+@media only screen and 
+    (max-width:480px) {
+       
+        .create-account-form {
+            display:flex;
+            flex-direction: column;
+            padding:0px;
+            width:100%;
+        }
+        form {
+            width:100%;
+        }
+        .btns {
+            display:flex;
+            justify-content: space-around;
+        }
+
+
+        .btns a {
+            font-size:10px;
+        }
+
+    }
+@media only screen and 
+(max-width:1280px) {
+    .create-account-form {
+        display: flex;
+        width:70%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    form {
+        margin-top: 10%;
+    }
+    input[type="submit"] {
+        padding: 3px;
+        font-size:16px;
+    }
+
+}
+@media only screen and 
+(max-width:767px) {
+    .create-account-form {
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+        
+    }
+    .btns {
+        padding: 3px 10px;
+    }
+    input[type="submit"] {
+        padding: 3px;
+        font-size:16px;
+    }
+}
+.field p {
+    padding:5px;
+}
+.field p input {
+    padding:5px;
+}
+
+.btns a {
+    color:blue;
+}
+
+.img-div img {
+    width: 100%;
+}

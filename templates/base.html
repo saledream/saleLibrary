@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+
+{% load bootstrap4 %}
+
+{% load static %} 
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="{% static 'images/logo.png' %}" />
+    <title>
+      {% block title %}SaleLibrary
+      {% endblock %}
+    </title>
+   
+     <link rel="stylesheet" href="{% static 'base.css' %}" >
+     <script src="{% static 'mobile-menu.js' %}">
+
+     </script>
+    {% bootstrap_css %} 
+
+    {% block css %} 
+    {% endblock %} 
+
+    {% block js %}
+    {% endblock %} 
+    
+</head>
+<body>
+
+    <header>
+        <div class="">
+
+        </div>
+        <div class="brand-nav">
+            <div class="logo-container">
+                <div class="header-logo">
+                      <div class="logo">
+                          <img src="{% static 'images/logo.png' %}" width="100px"/>
+                      </div>
+                      <h1> SaleLibary</h1>
+                </div>
+                <div class="header-account">
+
+                  {% if request.user.is_authenticated %} 
+                                      
+                        <div class="logedin" 
+                            {% if page == "account" %}
+                              class="active"
+                            {% endif %} >
+                                <a href="{% url 'account:logout' %}">Logout</a>
+                                <div class="profile_photo">
+                                        <a href="/accounts/show-MyProfile?q={{request.user.username}}">
+                                          <img src="{{request.user.profile.profile_photo.url}}" width="100%"/>   
+                                        </a>
+                                </div>
+                                
+                        </div>
+                  {% else %}
+                        <div class="notlogin"
+                        {% if page == "account" %}
+                              class="active"
+                            {% endif %} >
+                              <a class="signin" href="{% url 'account:login' %}">
+                                  signin
+                              </a>
+                              <a class="signup" href="{% url 'account:signup' %}">
+                                singup
+                              </a>
+                        </div>
+                  {% endif %} 
+
+                </div>
+            </div>
+            
+            <nav class="nav-items-container">
+                       <div class="for-mobile">
+                            <div  class="common-links">
+                                    <a href="{% url 'homepage' %}" 
+                                    {% if page == 'home' %}
+                                          class="active"
+                                        {% endif %}
+                                        class="nav-link">Home</a>
+                                  <a href="/books/show"  {% if page == 'books' %}
+                                        class="active"
+                                      {% endif %}class="nav-link ">Books</a>
+
+                                      <a href="{% url 'bookstore:upload' %}"  {% if page == 'upload' %}
+                                      class="active"
+                                    {% endif %}class="nav-link ">Upload book</a>
+
+                                    <a href="{% url 'aboutpage' %}"  {% if page == 'about' %}
+                                      class="active"
+                                    {% endif %}class="nav-link ">About</a>
+                                    
+                                    
+                            </div>
+                        <div class="mobile-menu" data-menu="on"
+                              onclick="showMenu();">
+                                  <div id="top-bar">
+
+                                   </div>
+                                  <div id="middle-bar">
+
+                                  </div>
+                                  <div id="lower-bar">
+
+                                  </div>
+                        </div>
+ 
+                      </div>
+                        
+                         <div id="hidden">
+                            
+                            <div class="mobile-category">
+                                <p> Books category</p>
+                              {% for cate in category %} 
+ 
+                                  <a href="/books/show?q={{cate}}" onclick="highlight(this);"> {{cate}}</a>
+
+                              {% endfor %}
+                            </div>
+                            
+                        </div>
+                        
+            </nav>
+           
+        </div>
+    </header>
+   <main>
+    <section class="main-space">
+      <div>
+
+      </div>
+      <div class="bg-color">
+
+      </div>
+      <div>
+
+      </div>
+   </section>
+       {% block content %} 
+
+       {% endblock %} 
+    </main>
+    
+
+</body>
+</html>

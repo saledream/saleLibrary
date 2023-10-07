@@ -1,0 +1,62 @@
+{% extends 'base.html' %}  
+{% load static %} 
+{% block title %} 
+     show profile
+{% endblock %}
+{% block css %} 
+     <link rel="stylesheet" href="{% static 'editprofile.css' %}" />
+{% endblock %}
+{% block content %} 
+    <section class="user-profile">
+        <div class="profilePhoto">
+            <div class="photo">
+                <img src="{{user.profile.profile_photo.url}}"/>
+            </div>
+            {% for field in profile %} 
+            <div class="field-label">
+                <p class="input">{{field}}</p>
+                <p class="label">{{field.label}}</p>
+            </div>
+         {% endfor %}
+        </div>
+        <div class="user">
+            {% for field in userform %} 
+              <div class="field-label">
+                <p class="input">{{field}}</p>
+                <p class="label">{{field.label}}</p>
+
+              </div>
+            {% endfor %}
+          
+        </div>
+        <hr>
+        <div class="download-books">
+           <h3>You have downloaded {{user.download_books.count}} books</h3>
+           <div class="books-grid">
+               
+            {% for book in d_book %}
+                <div class="book">
+                    <a href="{% url 'bookstore:book-detail' book.book.slug %}">
+                       <img src="{{book.book.cover.url}}"  alt="{{book.title}}"/>
+                    </a>
+                    
+               </div>
+
+            {% endfor %}
+           </div>
+        </div>
+        <div class="upload-books">
+            <h3> You have uploaded {{blo}} books </h3>
+            <div class="books-grid">
+                {% for book in u_book %}
+                 <div class="book">
+                    <a href="{% url 'bookstore:book-detail' book.book.slug %}">
+                        <img src="{{book.book.cover.url}}"/>
+                     </a>
+                     
+                 </div>
+                 {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %} 

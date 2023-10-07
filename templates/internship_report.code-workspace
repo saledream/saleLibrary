@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "../../../../internship_report"
+		},
+		{
+			"path": "../../../../djangoProjects/blogApp"
+		},
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../../../djangoProjects/socialApp"
+		}
+	],
+	"settings": {}
+}

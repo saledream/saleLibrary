@@ -1,0 +1,43 @@
+{% extends 'base.html' %} 
+{% load static %} 
+
+{% block css %}
+     <link rel="stylesheet" href="{% static 'about.css' %}" />
+{% endblock %}
+{% block content %} 
+  
+     <section class="about">
+          <div class="about-img">
+               <img src="{{ author.profile.profile_photo.url}}"/>
+          </div>
+
+        <div class="about-text">
+
+               <p>
+                    Hey everyone! My name is saleamlak. I am currently computer science student at Gambella University.
+                    I am a computer enthuasiast. Particularly I am very intersting about:
+                     <ul>
+                         <li>Networking</li>
+                         <li>Linux</li>
+                         <li>mobile and web application development</li>
+                         <li>pentesting</li>
+                     </ul>
+
+                   
+               </p>
+        </div>
+        
+     </section>
+
+     <section id="address-container">
+          <p>You can find me with the following address</p>
+          <div class="address">
+               <a href ="https://t.me/saleZHacker" target="__blank">
+                    <img src="{% static 'telegram.png' %}" width="30px">@saleZHacker
+               </a>
+               <a href="mailto:saledream8@gmail.com" target="__blank">
+                    <img src="{% static 'gmail.png' %}" width="30px">saledream8@gmail.com</a>
+          </div>
+     </section>
+
+{% endblock %} 

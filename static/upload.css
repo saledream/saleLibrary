@@ -1,0 +1,26 @@
+
+form {
+     width:70%;
+     margin-left: auto;
+     margin-right:auto;
+     margin-top:20px;
+     
+}
+input {
+    padding: 5px;
+    font-size:large;
+}
+input[type="file"] {
+    width:100%;
+}
+input[type="submit"] {
+
+    margin-top: 10px;
+    border:none;
+    padding:10px;
+    font-size: larger;
+    font-weight: bold;
+    background-color: green;
+    color:white;
+    border-radius:10px;
+}

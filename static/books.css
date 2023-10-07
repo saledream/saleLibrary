@@ -1,0 +1,166 @@
+.main-grid {
+    display:grid;
+    grid-template-columns:3fr 1fr;
+    grid-template-rows: auto;
+}
+.white-title-container {
+    padding-top:100px;
+
+}
+
+aside {
+    color: white;
+    padding: 10px;
+    
+}
+.books-category {
+    background-color: #343a40;
+    
+}
+.books-category  a {
+    display:block;
+    padding: 5px;
+    margin:2px;
+    color:white;
+    text-decoration: none;
+    margin-left:5px;
+    font-size:14px;
+    
+}
+.books-category p {
+    background: white;
+    color: black;
+    font-weight: bold;
+    font-style: italic;
+    padding:1px 2px
+}
+.books-category  a:hover {
+    background-color: white;
+    color: darkslategray;
+   
+}
+.header-line {
+    height:3px;
+}
+
+hr {
+    color: #343a40;
+    width: 85%;
+    margin-right:auto;
+    margin-left: auto;
+    background-color: #343a40;
+}
+
+aside a {
+    color:blue;
+}
+
+.book-container {
+    display: flex;
+    flex-direction: column;
+    padding:10px;
+    margin-left:20px;
+    
+
+}
+.bottom-line {
+    width:70%;
+}
+.book-metadata {
+    margin:5px 0;
+    
+}
+.book-metadata p {
+    text-align: left;
+    text-transform: capitalize;
+    margin: 3px 0;
+    color:#343a40;
+    
+}
+.book-metadata p span {
+     color:blue;
+     padding:3px;
+     margin-left:3px;
+}
+.books h1 {
+    text-align: center;
+    color:darkslategrey;
+
+}
+.book-cover:hover{
+
+  box-shadow: 1px 1px 3px 2px cyan;
+
+}
+.highlight {
+    background: white;
+}
+.upload {
+    display:none;
+    text-decoration: none;
+    font-size: 20px;
+    background-color: green;
+    padding:5px 3px;
+    outline:1px solid white;
+    position: relative;
+    top:-30px;
+    left:20px;
+    color:white;
+
+
+}
+@media only screen and 
+(min-width:500px) and
+(max-width:767px) {
+    .books-grid {
+        display:grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-row-gap: 5px;
+        width:70%;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+}
+@media only screen and 
+
+(max-width:480px) {
+    aside {
+        display:none;
+    }
+    .main-grid {
+        display:block;
+    }
+    .upload {
+        display: inline-block;
+
+    }
+    .books-grid {
+        display:grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-row-gap: 5px;
+        margin-left: 10px;
+
+    }
+   
+}
+@media only screen and 
+(min-width:800px) and (max-width:1280px) {
+      .books-grid {
+        display:grid;
+        grid-template-columns: repeat(3,1fr);
+        
+      }
+      
+
+      .book-cover img {
+        width: 100px;
+      }
+      .bottom-line {
+        display: none;
+      }
+     
+      
+}
